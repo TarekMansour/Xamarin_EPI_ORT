@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ORT.Views.Dashboard.Notes"
+             Title="Notes">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="saveItem" Icon="save2.png" Clicked="saveItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Tapez votre note :" Grid.Row="0" TextColor="Black" FontSize="Large" />
+
+                <Editor  x:Name="noteEditor" TextColor="Black" FontFamily="arial" Grid.Row="1" FontSize="Large"/>
+
+                <Image  Grid.Row="2" Source="add2.png"  VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+
+                <StackLayout x:Name="notestck" Grid.Row="3" Padding="5" VerticalOptions="Center">
+
+                </StackLayout>
+                <!--<ListView x:Name="listNotes" Grid.Row="3">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label TextColor="Black"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

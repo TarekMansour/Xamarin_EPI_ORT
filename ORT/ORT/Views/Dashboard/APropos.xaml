@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ORT.Views.Dashboard.APropos"
+             Title="A propos">
+    <ContentPage.Content>
+        <StackLayout x:Name="aboutContent" Orientation="Vertical">
+            <Grid Padding="20,20,20,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Application crée par :" TextColor="Orange" />
+                <Label Grid.Row="1" Text="Tarek Mansour sous l'encadrement du professeur Adel Dahmen." TextColor="Black" />
+                <Label Grid.Row="2" Text="Version 1.0.0" TextColor="Orange" />
+                <Label Grid.Row="3" Text="Copyright © Tarek Mansour 2017." TextColor="Black" />
+                <Label Grid.Row="4" Text="Créé avec :" TextColor="Orange" />
+                <Label Grid.Row="5" Text="C# and Xamarin.Forms." TextColor="Black"  />
+                <Label Grid.Row="6" Text="Epi ORT :" TextColor="Orange" />
+                <Label Grid.Row="7" Text="C'est un outils de révision des testes destiné pour les etudiants de l'epi de différentes branches."  TextColor="Black" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

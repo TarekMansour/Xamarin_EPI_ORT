@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="Français" IsDefault="false" IsRightToLeft="false">
+  <LocaleResource Name="Dashboard.Menu.Tiltle.Nouveauté">
+    <Value>Nouveauté</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Dashboard.Menu.Tiltle.Filières">
+    <Value>Filières</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Dashboard.Menu.Tiltle.Paramètres">
+    <Value>Paramètres</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Dashboard.Menu.Tiltle.Apropos">
+    <Value>A propos</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Dashboard.Menu.Tiltle.Notes">
+    <Value>Notes</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Dashboard.Menu.Tiltle.Language">
+    <Value>Langues</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Dashboard.Menu.Tiltle.Sortir">
+    <Value>Sortir</Value>
+  </LocaleResource>
+  
+</Language>

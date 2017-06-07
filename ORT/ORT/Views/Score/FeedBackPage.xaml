@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ORT.Views.Score.FeedBackPage"
+             Title="Vos commentaires ">
+    <ContentPage.Content>
+        <Grid Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <!--Label commentaire-->
+            <Label Text="commentaire :" Margin="5,0,5,0" FontAttributes="Bold" Grid.Row="0" FontSize="Large" TextColor="Black" VerticalOptions="Center"/>
+            
+            <!--Zone de commentaire-->
+            <Editor  x:Name="Zonecommentaire"  Margin="5,0,5,0" HeightRequest="100"  FontFamily="arial" Grid.Row="1" FontSize="Medium"/>
+            
+            <!--Email de l'utilisateur-->
+            <Label Text="Entrez votre email pour nous revenir à vous :" Margin="5,0,5,0" FontAttributes="Bold" FontSize="Large" TextColor="Black" Grid.Row="2"  VerticalOptions="Center"/>
+            
+            <!--Zone email-->
+            <Entry x:Name="user_email" Grid.Row="3" Margin="5,0,5,0" Placeholder="votre email" FontSize="Medium" VerticalOptions="Center"/>
+            
+            <!--envoie email-->
+            <Button Text="Envoyer votre Email" Margin="5,0,5,0" Grid.Row="4" BackgroundColor="#F5F5F5" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Clicked="sendEmailCLick"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

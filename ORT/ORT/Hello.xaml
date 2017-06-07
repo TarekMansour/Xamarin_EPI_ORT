@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ORT.Hello">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                iOS="10, 20, 10, 10"
+                Android="0,0,0,0"/>
+    </ContentPage.Padding>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Font" Value="Medium"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="LabelStyleSmall" TargetType="Label">
+                <Setter Property="TextColor" Value="#41a4dc"/>
+                <Setter Property="Font" Value="Small"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+
+       
+
+        <Grid RowSpacing="0" Grid.Row="1" Padding="10,10,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="145*" />
+                <RowDefinition Height="415*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="88*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" RowSpacing="10" BackgroundColor="#ed004a">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" BackgroundColor="#ed004a" Padding="30,0,0,0">
+                    <Label Text="Your personal exam history information"
+                 Style="{StaticResource LabelStyle}"
+                 HorizontalOptions="StartAndExpand"/>
+                </Grid>
+
+                <Grid Grid.Row="1"
+              BackgroundColor="#0075c1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                 Text=""
+                 Style="{StaticResource LabelStyle}"/>
+                    <Label Grid.Column="1"
+                 Text="Type:"
+                 Style="{StaticResource LabelStyle}"/>
+                    <Label Grid.Column="2"
+                 Text="Created:"
+                 Style="{StaticResource LabelStyle}"/>
+                    <Label Grid.Column="3"
+                 Text="Finished:"
+                 Style="{StaticResource LabelStyle}"/>
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <ScrollView>
+                    <Grid x:Name="GridExams">
+
+                    </Grid>
+                </ScrollView>
+            </Grid>
+
+            <BoxView Grid.Row="2" Color="#0075c1" WidthRequest="100" HeightRequest="2"/>
+
+            <Grid Grid.Row="3" Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="40*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0"
+                BackgroundColor="{Binding DeleteButtonBackgroundColor}"
+                Padding="30,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                   x:Name="LabelDeleteSelectedExamsPartOne"
+                   Text="{Binding DeleteButtonText}"
+                   Style="{StaticResource LabelStyle}"/>
+
+                        <Label Grid.Column="1"
+                   x:Name="LabelDeleteSelectedExamsPartTwo"
+                   Text="&#xf014;"
+                   Style="{StaticResource LabelStyle}"
+                   Font="Large"/>
+
+                        <Grid.GestureRecognizers IsEnabled="{Binding DeleteButtonIsEnabled}">
+                            <TapGestureRecognizer
+                  Command="{Binding DeleteSelectedExamsCommand}"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                    <Grid Grid.Column="2"
+                BackgroundColor="#0075c1"
+                Padding="30,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                   x:Name="LabelCreateNewExamPartOne"
+                   Text="Create New Exam "
+                   Style="{StaticResource LabelStyle}"/>
+
+                        <Label Grid.Column="1"
+                   x:Name="LabelCreateNewExamPartTwo"
+                   Text="&#xf040;"
+                   Style="{StaticResource LabelStyle}"
+                   Font="Large"/>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                  Command="{Binding CreateNewExamCommand}"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1"
+      IsVisible="{Binding IsLoading}"
+      BackgroundColor="Black"
+      Opacity="0.25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <ActivityIndicator  Grid.Row="0"
+                          IsVisible="{Binding IsLoading}"
+                          IsRunning="{Binding IsLoading}"
+                          VerticalOptions="End"
+                          HorizontalOptions="Center"/>
+            <Label Grid.Row="1"
+             Text="Please wait..."
+             TextColor="White"
+             VerticalOptions="Start"
+             HorizontalOptions="Center"/>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

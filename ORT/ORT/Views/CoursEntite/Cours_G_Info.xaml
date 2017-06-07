@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ORT.Views.CoursEntite.Cours_G_Info"
+             xmlns:ctrl="clr-namespace:ORT;assembly=ORT">
+
+    <ContentPage.Content>
+        <Grid Padding="5" RowSpacing="2" ColumnSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Margin="5,5,5,15" Text="Les cours disponibles :" Grid.Row="0" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+            <ListView x:Name="listCR" Grid.Row="1" ItemSelected="listCR_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout Padding="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <!--<ColumnDefinition Width="auto"/>-->
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding ImageCr}"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    
+                                    <StackLayout Grid.Column="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" TextColor="Black" Text="{Binding LibelleCr}" VerticalOptions="Center"/>
+                                            <StackLayout Grid.Row="1">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Grid.Column="0" Text="{Binding NbQCr}" />
+                                                    <Label Grid.Column="1" Text="question(s)" TextColor="#00C853" />
+                                                </Grid>
+                                            </StackLayout>
+
+                                            <StackLayout x:Name="NEwQuestionStack" Grid.Row="2">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Grid.Column="0" Text="{Binding NbQCrNew}" />
+                                                    <Label Grid.Column="1" Text="nouvelle(s) question(s)" TextColor="#6200EA" />
+                                                </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <!--<Image x:Name="starIMG" Grid.Column="2" Source="star_a.png" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"   NumberOfTapsRequired="1" />
+                                        </Image.GestureRecognizers>
+                                    </Image>-->
+
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

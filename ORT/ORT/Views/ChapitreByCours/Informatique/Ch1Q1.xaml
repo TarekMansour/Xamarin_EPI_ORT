@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ORT.Views.ChapitreByCours.Informatique.Ch1Q1"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Showitem" Icon="show2.png" Clicked="Showitem_Clicked"/>
+        <ToolbarItem Name="item1" Icon="finishExam4.png"  Clicked="item1_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid x:Name="mygrid" Padding="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="55" />
+        </Grid.RowDefinitions>
+        <Label x:Name="QuestionLbl" Grid.Row="0"  TextColor="Black"  FontSize="Large" VerticalOptions="CenterAndExpand"/>
+
+        <StackLayout x:Name="stck" Grid.Row="1" >
+           
+        </StackLayout>
+
+        <!--<ListView x:Name="listReponse" x:FieldModifier="public" Grid.Row="1" Margin="0,15,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="30">
+                        <ViewCell.View>
+                            <StackLayout>
+                                <controls:CheckBox DefaultText="{Binding TextR}" Grid.Row="0" HorizontalOptions="FillAndExpand" TextColor="Blue" />
+                            </StackLayout>
+                        </ViewCell.View>
+                        
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+        <StackLayout x:Name="stackRightAnswer" Grid.Row="2" BackgroundColor="#CFD8DC" IsVisible="False">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Text="La réponse correcte :" TextColor="Black" FontSize="Medium" Grid.Row="0"/>
+
+                <ListView x:Name="listCorrect_Rep" Grid.Row="1" HeightRequest="55">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding TextR}" TextColor="Black"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button    Margin="10, 5" BackgroundColor="#EEEEEE" HorizontalOptions="Fill" x:Name="previousButton" Text="Précedent" Clicked="previousButton_Clicked">
+                    <Button.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" Android="45" iOS="30" WinPhone="30"/>
+                    </Button.HeightRequest>
+                </Button>
+
+                <Button Grid.Column="1"  Margin="10, 5" BackgroundColor="#EEEEEE" HorizontalOptions="Fill" x:Name="nextButton" Text="Suivant" Clicked="nextButton_Clicked">
+                    <Button.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" Android="45" iOS="30" WinPhone="30"/>
+                    </Button.HeightRequest>
+                </Button>
+            </Grid>
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

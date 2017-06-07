@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ORT.Views.Dashboard.Language"
+             Title="Langues">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Margin="0,10,0,0" Padding="15" Grid.Row="0" Orientation="Horizontal">
+            <Label Text="Choix de langue à utiliser :" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+        </StackLayout>
+
+        <StackLayout x:Name="stck" Padding="15" Orientation="Horizontal" Spacing="0" Grid.Row="1">
+            <Label Text="Anglais" TextColor="Black" FontSize="Large" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+            <Switch x:Name="switch1" IsToggled="False" HorizontalOptions="End"   VerticalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout Padding="15" Orientation="Horizontal" Spacing="0" Grid.Row="2">
+            <Label Text="Français" TextColor="Black" FontSize="Large" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+            <Switch IsToggled="True" HorizontalOptions="End"  VerticalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout Padding="15" Orientation="Horizontal" Spacing="0" Grid.Row="3">
+            <Label Text="Arabe " TextColor="Black" FontSize="Large" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+            <Switch IsToggled="False" HorizontalOptions="End"  VerticalOptions="Center" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
